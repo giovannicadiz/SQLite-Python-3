@@ -25,6 +25,7 @@ def insert_data():
 	c.execute("INSERT INTO empleado VALUES (10,'Taylor', 700,'2009-01-05')")
 
 	conn.commit()
+	c.close()
 	conn.close()
 
 # Seleccionar datos	
@@ -46,6 +47,8 @@ def updateData():
 	
 	c.execute('UPDATE empleado SET SaleValue=2000 WHERE sale_id = 1 ')
 	conn.commit()
+	c.close()
+	conn.close()
 	
 	c.execute('SELECT * FROM empleado')
 	[print(row) for row in c.fetchall()]
@@ -59,6 +62,8 @@ def deleteData():
 	
 	c.execute('DELETE FROM empleado WHERE sale_id = 10 ')
 	conn.commit()
+	c.close()
+	conn.close()
 	
 	c.execute('SELECT * FROM empleado')
 	[print(row) for row in c.fetchall()]	
